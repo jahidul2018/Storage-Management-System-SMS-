@@ -85,7 +85,6 @@ storage-management-system/
 │-- package.json                  # Dependencies & Scripts
 │-- README.md                     # Documentation
 
-
 ---
 
 ## 📌 **API Endpoints**

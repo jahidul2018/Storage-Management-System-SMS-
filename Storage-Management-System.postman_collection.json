@@ -1,0 +1,645 @@
+{
+  "info": {
+    "name": "Storage Management System API",
+    "description": "Postman collection for testing the Storage Management System backend APIs",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "auto-generated-id"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/register",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "register"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/users/login",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "login"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Get Profile",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/users/profile",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "profile"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Profile",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/users/profile",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "profile"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Updated\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/users/profile",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "users",
+            "profile"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Request Password Reset",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/password/request-reset",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "password",
+            "request-reset"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"john@example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Verify Reset Code",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/password/verify-code",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "password",
+            "verify-code"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"john@example.com\",\n  \"resetCode\": \"123456\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Reset Password",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/password/reset-password",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "password",
+            "reset-password"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"john@example.com\",\n  \"resetCode\": \"123456\",\n  \"newPassword\": \"newPass123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Create Folder",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/folders/create",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "folders",
+            "create"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"My Folder\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "List Folders",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/folders",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "folders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Folder",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/folders/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "folders",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Folder",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/folders/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "folders",
+            ":id"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Folder\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Delete Folder",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/folders/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "folders",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List All Files",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/all",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            "all"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Images",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/images",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            "images"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List PDFs",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/pdfs",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            "pdfs"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Notes",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/notes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            "notes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get File",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update File",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            ":id"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated File\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Delete File",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Toggle Favorite",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/files/favorite/:id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "files",
+            "favorite",
+            ":id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Home Data",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/home",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "home"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Items By Date",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/calendar/2024-03-15",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "calendar",
+            "2024-03-15"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Storage Info",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/storage",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "storage"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Delete File (Cleanup)",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/cleanup/delete/:fileId",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "cleanup",
+            "delete",
+            ":fileId"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
